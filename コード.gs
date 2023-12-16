@@ -12,13 +12,9 @@ function doPost(e){
  var sh = SpreadsheetApp.openByUrl(url);
 
 //結果
- var id = e.parameter.id;
- var password = e.parameter.password;
+ var id = e.parameters.id.toString();
+ var password = e.parameters.password.toString();
 
 var array = [id,password];
 sh.appendRow(array);
-
-//送信後に返されるページ
-var resultpage = HtmlService.createTemplateFromFile("result");
-return resultpage.evaluate();
 }
